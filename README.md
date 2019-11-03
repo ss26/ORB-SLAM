@@ -12,7 +12,7 @@ I use Ubuntu 16.04.5 LTS. For making use of [ORB-SLAM2](https://github.com/raulm
 * [Eigen](http://eigen.tuxfamily.org/index.php?title=Main_Page)
     * Latest stable Eigen 3.2.x version is recommended. I use version 3.2.10.
 
-The steps to install Pangolin and Eigen are described in each website/repository. 
+The steps to install Pangolin and Eigen are described in the respective website/repository. 
 
 ### OpenCV Installation
 For OpenCV, we'll first need virtualenv and virtualenvwrapper. In the terminal, type
