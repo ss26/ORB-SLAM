@@ -44,7 +44,7 @@ To exit the virtual environment, type `deactivate`.
 
 Go to the official [OpenCV Releases](https://opencv.org/releases/) page and download the source for version 3.4.6. Then, download an extra package called opencv\_contrib-3.4.6 from [here](https://github.com/opencv/opencv_contrib/releases). Place these compressed folders in the home folder and extract them. 
 
-Finally, we'll need to install the dependencies for openCV and then build openCV from source. For this, download the file installcv2.sh. In this file, you need to change <USERNAME> to your machine's username in the following line that's a part of cmake command:
+Finally, we'll need to install the dependencies for openCV and then build openCV from source. For this, download the file `installcv2.sh`. In this file, you need to change `<USERNAME>` to your machine's username in the following line that's a part of cmake command:
 
 	-D OPENCV_EXTRA_MODULES_PATH=/home/<USERNAME>/opencv_contrib-3.4.6/modules \
 
