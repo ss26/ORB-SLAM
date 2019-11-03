@@ -4,13 +4,13 @@ This repository describes the installation and usage of ORB-SLAM in a mobile rob
 
 ## Required Packages
 
-We use Ubuntu 16.04.5 LTS. For making use of [ORB-SLAM2](https://github.com/raulmur/ORB_SLAM2), we will need the following packages:
+I use Ubuntu 16.04.5 LTS. For making use of [ORB-SLAM2](https://github.com/raulmur/ORB_SLAM2), we will need the following packages:
 
 * [Pangolin](https://github.com/stevenlovegrove/Pangolin)
 * [OpenCV](https://opencv.org/)
-    * OpenCV install instructions described below. We use version 3.4.6.
+    * OpenCV install instructions described below. I use version 3.4.6.
 * [Eigen](http://eigen.tuxfamily.org/index.php?title=Main_Page)
-    * Latest stable Eigen 3.2.x version is recommended. We use version 3.2.10.
+    * Latest stable Eigen 3.2.x version is recommended. I use version 3.2.10.
 
 The steps to install Pangolin and Eigen are described in each website/repository. 
 
