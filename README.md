@@ -18,7 +18,7 @@ The steps to install Pangolin and Eigen are described in the respective website/
 For OpenCV, we'll first need virtualenv and virtualenvwrapper. In the terminal, type
 
 	sudo pip install virtualenv virtualenvwrapper  
-	sudo apt-get update`
+	sudo apt-get update
 
 Go to your bashrc file `gedit .bashrc` and paste the following:
 
