@@ -17,15 +17,16 @@ The steps to install Pangolin and Eigen are described in each website/repository
 ### OpenCV Installation
 For OpenCV, we'll first need virtualenv and virtualenvwrapper. In the terminal, type
 
-	sudo pip install virtualenv virtualenvwrapper
-	sudo apt-get update
+  `sudo pip install virtualenv virtualenvwrapper`
+  
+  `sudo apt-get update`
 
-Go to your bashrc file `gedit .bashrc` and type the following:
+Go to your bashrc file `gedit .bashrc` and paste the following:
 
 	export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-	export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
-	export WORKON_HOME=$HOME/.virtualenvs
-	source /usr/local/bin/virtualenvwrapper.sh
+  	export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
+  	export WORKON_HOME=$HOME/.virtualenvs
+  	source /usr/local/bin/virtualenvwrapper.sh
 
 Now, close the terminal and open a new one. We'll create a new virtual environment (called cv) to install openCV. 
 	
@@ -33,7 +34,7 @@ Now, close the terminal and open a new one. We'll create a new virtual environme
 
 If you now type `workon cv`, your terminal display will start with the cv virtual environment like
 
-`(cv) username@desktopname:~$`
+  `(cv) username@desktopname:~$`
 
 Here, we'll install a few important packages:
 	
@@ -50,9 +51,48 @@ Finally, we'll need to install the dependencies for openCV and then build openCV
 Save the file. Open a new terminal and type the following:
 
   `chmod +777 installcv2.sh`
-	`bash installcv2.sh`
+  
+  `bash installcv2.sh`
 
 This will take some time to execute (~20-30 mins). 
 
+After openCV is built and installed, go to `/home/<USERNAME>/opencv-3.4.6/build/lib`. Open in terminal and rename the file as
+cv2.so by typing
 
-All the required packages are now installed. Test if the installation works by executing the Monocular Examples (TUM, KITTI, EUROC) as described in the [README](https://github.com/raulmur/ORB_SLAM2) of the ORB-SLAM2 directory.
+ `sudo mv cv2.cpython-35m-x86_64-linux-gnu.so cv2.so`
+
+**Note**: This file was called 'cv2.cpython-35m-x86_64-linux-gnu.so' for me, it might be named differently for you. 
+
+Next, copy this cv2.so file and paste it to `~/.virtualenvs/cv/lib/python3.5/site-packages/`, `/usr/local/lib/python2.7/site-packages`, `/usr/local/lib/python3.5/site-packages`, `/usr/local/lib/python3.5/dist-packages`.
+
+**Note**: If there is no `site-packages` folder in the path `/usr/local/lib/python3.5`, create one using `sudo mkdir site-packages`, then copy paste the cv2.so file to the newly created folder. 
+
+After renaming and performing the copy-paste operations to the respective folders, sym-link the file by typing
+
+  `cd ~/.virtualenvs/cv/lib/python3.5/site-packages/`
+  
+  `ln -s /usr/local/lib/python3.5/site-packages/cv2.so cv2.so`
+
+To check if openCV is working, activate the cv virtual environment and type
+  
+  `python3`
+  
+  `import cv2`
+  
+  `cv2.__version__`
+
+The terminal should return `'3.4.6'` which means openCV is functioning properly.
+
+### Building ORB-SLAM2 library and examples
+All the required packages are now installed. Now, download the [ORB-SLAM2](https://github.com/raulmur/ORB_SLAM2) repository to your home folder, rename the folder as 'ORB_SLAM2' and then execute:
+	
+	cd ORB_SLAM2
+	chmod +x build.sh
+	./build.sh
+
+### Monocular Test
+Test if the installation works by executing the Monocular Examples (TUM, KITTI, EUROC). I tested by downloading TUM's [fr1/xyz](https://vision.in.tum.de/data/datasets/rgbd-dataset/download) -- the first dataset under 'Testing and Debugging'. Place the uncompressed folder inside the ORB_SLAM2 folder and execute:
+
+	cd ORB_SLAM2
+  	./Examples/Monocular/mono_tum Vocabulary/ORBvoc.txt Examples/Monocular/TUMX.yaml /home/<USERNAME>/ORB_SLAM2/rgbd_dataset_freiburg1_xyz
+
