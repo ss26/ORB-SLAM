@@ -62,7 +62,7 @@ cv2.so by typing
 
 **Note**: This file was called `'cv2.cpython-35m-x86_64-linux-gnu.so'` for me, it might be named differently for you. 
 
-Next, copy this cv2.so file and paste it to `~/.virtualenvs/cv/lib/python3.5/site-packages/`, `/usr/local/lib/python2.7/site-packages`, `/usr/local/lib/python3.5/site-packages`, `/usr/local/lib/python3.5/dist-packages`.
+Next, copy this cv2.so file and paste it to `~/.virtualenvs/cv/lib/python3.5/site-packages/`, `/usr/local/lib/python2.7/site-packages`, `/usr/local/lib/python3.5/site-packages`, `/usr/local/lib/python3.5/dist-packages`. Use `sudo cp source destination` where `source` is the (absolute) location of the cv2.so file and `destination` is the (absolute) location of the destination folder.
 
 **Note**: If there is no `site-packages` folder in the path `/usr/local/lib/python3.5`, create one using `sudo mkdir site-packages`, then copy paste the cv2.so file to the newly created folder. 
 
