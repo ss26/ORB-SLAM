@@ -17,9 +17,8 @@ The steps to install Pangolin and Eigen are described in each website/repository
 ### OpenCV Installation
 For OpenCV, we'll first need virtualenv and virtualenvwrapper. In the terminal, type
 
-  `sudo pip install virtualenv virtualenvwrapper`
-  
-  `sudo apt-get update`
+	sudo pip install virtualenv virtualenvwrapper  
+	sudo apt-get update`
 
 Go to your bashrc file `gedit .bashrc` and paste the following:
 
@@ -30,15 +29,16 @@ Go to your bashrc file `gedit .bashrc` and paste the following:
 
 Now, close the terminal and open a new one. We'll create a new virtual environment (called cv) to install openCV. 
 	
-  `mkvirtualenv cv -p python3`
+	mkvirtualenv cv -p python3
+
 
 If you now type `workon cv`, your terminal display will start with the cv virtual environment like
 
-  `(cv) username@desktopname:~$`
+ 	(cv) username@desktopname:~$
 
 Here, we'll install a few important packages:
 	
-  `pip install wheel numpy scipy matplotlib scikit-image scikit-learn ipython dlib`
+	pip install wheel numpy scipy matplotlib scikit-image scikit-learn ipython dlib
 
 To exit the virtual environment, type `deactivate`. 
 
@@ -46,22 +46,21 @@ Go to the official [OpenCV Releases](https://opencv.org/releases/) page and down
 
 Finally, we'll need to install the dependencies for openCV and then build openCV from source. For this, download the file installcv2.sh. In this file, you need to change <USERNAME> to your machine's username in the following line that's a part of cmake command:
 
-  `-D OPENCV_EXTRA_MODULES_PATH=/home/<USERNAME>/opencv_contrib-3.4.6/modules \`
+	-D OPENCV_EXTRA_MODULES_PATH=/home/<USERNAME>/opencv_contrib-3.4.6/modules \
 
 Save the file. Open a new terminal and type the following:
 
-  `chmod +777 installcv2.sh`
-  
-  `bash installcv2.sh`
+	chmod +777 installcv2.sh  
+ 	bash installcv2.sh
 
 This will take some time to execute (~20-30 mins). 
 
 After openCV is built and installed, go to `/home/<USERNAME>/opencv-3.4.6/build/lib`. Open in terminal and rename the file as
 cv2.so by typing
 
- `sudo mv cv2.cpython-35m-x86_64-linux-gnu.so cv2.so`
+	sudo mv cv2.cpython-35m-x86_64-linux-gnu.so cv2.so
 
-**Note**: This file was called 'cv2.cpython-35m-x86_64-linux-gnu.so' for me, it might be named differently for you. 
+**Note**: This file was called `'cv2.cpython-35m-x86_64-linux-gnu.so'` for me, it might be named differently for you. 
 
 Next, copy this cv2.so file and paste it to `~/.virtualenvs/cv/lib/python3.5/site-packages/`, `/usr/local/lib/python2.7/site-packages`, `/usr/local/lib/python3.5/site-packages`, `/usr/local/lib/python3.5/dist-packages`.
 
@@ -69,17 +68,14 @@ Next, copy this cv2.so file and paste it to `~/.virtualenvs/cv/lib/python3.5/sit
 
 After renaming and performing the copy-paste operations to the respective folders, sym-link the file by typing
 
-  `cd ~/.virtualenvs/cv/lib/python3.5/site-packages/`
-  
-  `ln -s /usr/local/lib/python3.5/site-packages/cv2.so cv2.so`
+	cd ~/.virtualenvs/cv/lib/python3.5/site-packages/  
+  	ln -s /usr/local/lib/python3.5/site-packages/cv2.so cv2.so
 
 To check if openCV is working, activate the cv virtual environment and type
   
-  `python3`
-  
-  `import cv2`
-  
-  `cv2.__version__`
+	python3  
+  	import cv2
+  	cv2.__version__
 
 The terminal should return `'3.4.6'` which means openCV is functioning properly.
 
