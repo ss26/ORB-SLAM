@@ -87,7 +87,7 @@ All the required packages are now installed. Now, download the [ORB-SLAM2](https
 	./build.sh
 
 ### Monocular Test
-Test if the installation works by executing the Monocular Examples (TUM, KITTI, EUROC). I tested by downloading TUM's [fr1/xyz](https://vision.in.tum.de/data/datasets/rgbd-dataset/download) -- the first dataset under 'Testing and Debugging'. Place the uncompressed folder inside the ORB_SLAM2 folder and execute:
+Test if the installation works by executing the Monocular Examples (TUM, KITTI, EUROC). I tested by downloading TUM's [fr1/xyz](https://vision.in.tum.de/data/datasets/rgbd-dataset/download) -- the first dataset under 'Testing and Debugging'. Place the uncompressed folder inside the ORB_SLAM2 folder, activate the cv virtual environment and execute:
 
 	cd ORB_SLAM2
   	./Examples/Monocular/mono_tum Vocabulary/ORBvoc.txt Examples/Monocular/TUMX.yaml /home/<USERNAME>/ORB_SLAM2/rgbd_dataset_freiburg1_xyz
