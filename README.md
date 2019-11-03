@@ -1,6 +1,6 @@
 # Deploying ORB-SLAM in a mobile robot
 
-This repository describes the installation and usage of ORB-SLAM in a mobile robot using Raspberry Pi and Pi Camera V2, courtesy of Gautham Ponnu & Jacob George who implemented this project for their MEngg Design Project @ Cornell. Find their thesis report [here](https://courses.ece.cornell.edu/ece6930/ECE6930_Spring16_Final_MEng_Reports/SLAM/Real-time%20ROSberryPi%20SLAM%20Robot.pdf).
+This repository describes the installation and usage of ORB-SLAM in a mobile robot using Raspberry Pi and Pi Camera V2, courtesy of Gautham Ponnu & Jacob George who implemented this project for their MEngg Design Project @ Cornell. Find their project report [here](https://courses.ece.cornell.edu/ece6930/ECE6930_Spring16_Final_MEng_Reports/SLAM/Real-time%20ROSberryPi%20SLAM%20Robot.pdf).
 
 ## Required Packages
 
