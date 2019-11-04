@@ -16,7 +16,16 @@ I use Ubuntu 16.04.5 LTS. For making use of [ORB-SLAM2](https://github.com/raulm
 
 The steps to install Pangolin and Eigen are described in the respective website/repository. 
 
-### OpenCV Installation
+## Required Components
+
+* Raspberry Pi 3 B+
+* Pi Camera V2
+* IMU (MPU9250)
+* Motors
+* Battery
+* Robot Chassis
+
+## 1. OpenCV Installation
 For OpenCV, we'll first need virtualenv and virtualenvwrapper. In the terminal, type
 
 	sudo pip install virtualenv virtualenvwrapper  
@@ -81,14 +90,14 @@ To check if openCV is working, activate the cv virtual environment and type
 
 The terminal should return `'3.4.6'` which means openCV is functioning properly.
 
-### Building ORB-SLAM2 library and examples
+## 2. Building ORB-SLAM2 library and examples
 All the required packages are now installed. Now, download the [ORB-SLAM2](https://github.com/raulmur/ORB_SLAM2) repository to your home folder, rename the folder as 'ORB_SLAM2' and then execute:
 	
 	cd ORB_SLAM2
 	chmod +x build.sh
 	./build.sh
 
-### Monocular Test
+## 3. Monocular Test
 Test if the installation works by executing the Monocular Examples (TUM, KITTI, EUROC). I tested by downloading TUM's [fr1/xyz](https://vision.in.tum.de/data/datasets/rgbd-dataset/download) -- the first dataset under 'Testing and Debugging'. Place the uncompressed folder inside the ORB_SLAM2 folder, activate the cv virtual environment and execute:
 
 	cd ORB_SLAM2
